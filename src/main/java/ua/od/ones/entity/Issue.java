@@ -11,8 +11,7 @@ public class Issue implements Serializable {
 
     private int id;
     private String description;
-    private int publicationId;
     private String fileURL;
     private int price;
-
+    private int themeId;
 }

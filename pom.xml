@@ -5,13 +5,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>ua.od.ones</groupId>
-  <artifactId>pereodicals</artifactId>
+  <artifactId>periodical</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>Pereodicals Maven Webapp</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.1s.od.ua</url>
+  <name>Periodical project</name>
+  <!-- <url>http://localhost</url> -->
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -70,23 +69,24 @@
       <version>4.0.1</version>
       <scope>provided</scope>
     </dependency>
+
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>RELEASE</version>
-      <scope>compile</scope>
+      <version>1.18.16</version>
+      <scope>provided</scope>
     </dependency>
+
   </dependencies>
 
   <build>
-    <finalName>pereodicals</finalName>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+    <finalName>periodicals</finalName>
+    <pluginManagement>
       <plugins>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.1.0</version>
         </plugin>
-        <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.0.2</version>
