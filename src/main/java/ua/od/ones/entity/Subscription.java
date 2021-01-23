@@ -2,14 +2,26 @@ package ua.od.ones.entity;
 
 import lombok.Data;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import java.util.Date;
 
+@Entity
 @Data
 public class Subscription {
-    private static final long serialVersionUID = -7558253885188743L;
 
+    @Id
+    @GeneratedValue
     private int id;
-    private int userId;
+
+    @ManyToMany
+    private User user;
+
+    @ManyToMany
+    private Issue issue;
+
     private int publicationId;
     private Date startDate;
     private Date endDate;

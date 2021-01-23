@@ -2,7 +2,6 @@ package ua.od.ones.entity;
 
 import lombok.Data;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,31 +9,23 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import java.util.Date;
 import java.util.List;
 
 @Data
 @Entity
-@Table(name = "users")
-public class User {
+public class AccountOperations {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
     private int id;
 
-    private String email;
-    private String password;
-    private String name;
-
     @ManyToOne
-    private Localization;
+    @JoinColumn(name = "user_id", nullable = false)
+    private User users;
 
-    @ManyToOne
-    @JoinColumn(name = "role_id")
-    private Role role;
-
-    @OneToMany(mappedBy = "user")
-    private List<AccountOperations> operations;
+    private Date date;
+    private String description;
+    private int sum;
 
 }

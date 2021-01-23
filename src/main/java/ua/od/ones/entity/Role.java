@@ -1,6 +1,18 @@
 package ua.od.ones.entity;
 
+import lombok.Data;
 
-public enum Role {
-    ADMINISTRATOR, CUSTOMER;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+@Data
+public class Role {
+
+    @Id
+    @GeneratedValue
+    int id;
+
+    String name;
 }
