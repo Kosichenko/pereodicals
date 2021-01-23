@@ -8,10 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import java.util.List;
 
 @Data
 @Entity
@@ -30,13 +28,7 @@ public class User {
     private boolean isAdmin;
 
     @OneToOne
-    @JoinColumn(name = "loc_id")
-    private Localization localization;
+    private LocalName localName;
 
-    @OneToMany(mappedBy = "user")
-    private List<AccountOperations> operations;
-
-    @OneToMany(mappedBy = "user")
-    private List<UserIssues> userIssues;
 
 }

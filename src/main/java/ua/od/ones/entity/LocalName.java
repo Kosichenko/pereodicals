@@ -6,13 +6,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity
 @Data
-public class Localization {
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  private int id;
+@Entity
+@Table(name = "locales")
+public class LocalName {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
 
-  private String name;
+    private String name;
 }

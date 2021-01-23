@@ -8,20 +8,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import java.util.Date;
-import java.util.List;
 
 @Data
 @Entity
-public class AccountOperations {
+public class UserOperations {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "id", nullable = false)
     private User users;
 
     private Date date;
