@@ -3,15 +3,24 @@ package ua.od.ones.entity;
 
 import lombok.Data;
 
-import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Data
-public class Issue implements Serializable {
-    private static final long serialVersionUID = -7558253885188741L;
+@Entity
+public class Issue {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
     private String description;
     private String fileURL;
     private int price;
-    private int themeId;
+
+    @OneToOne
+    private Theme theme;
 }

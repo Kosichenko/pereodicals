@@ -2,15 +2,17 @@ package ua.od.ones.entity;
 
 import lombok.Data;
 
-import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Data
-public class Theme implements Serializable {
-
-    private static final long serialVersionUID = -755825388518874L;
-
-
+@Entity
+public class Theme {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String name;
 
+    private String name;
 }

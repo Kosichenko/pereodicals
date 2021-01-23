@@ -8,8 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import java.util.List;
 
@@ -23,18 +23,20 @@ public class User {
     @Column(name = "id")
     private int id;
 
+    private String name;
     private String email;
     private String password;
-    private String name;
 
-    @ManyToOne
-    private Localization;
+    private boolean isAdmin;
 
-    @ManyToOne
-    @JoinColumn(name = "role_id")
-    private Role role;
+    @OneToOne
+    @JoinColumn(name = "loc_id")
+    private Localization localization;
 
     @OneToMany(mappedBy = "user")
     private List<AccountOperations> operations;
+
+    @OneToMany(mappedBy = "user")
+    private List<UserIssues> userIssues;
 
 }

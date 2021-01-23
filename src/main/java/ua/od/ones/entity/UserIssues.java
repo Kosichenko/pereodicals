@@ -6,18 +6,20 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
-public class Subscription {
+public class UserIssues {
 
     @Id
     @GeneratedValue
     private int id;
 
-    @ManyToMany
-    private User user;
+    @ManyToOne
+    private List<User> user;
 
     @ManyToMany
     private Issue issue;
