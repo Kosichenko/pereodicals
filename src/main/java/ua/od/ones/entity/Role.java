@@ -10,11 +10,12 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "local_names")
-public class LocalName {
+@Table(name = "roles")
+public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String name;
+
 }

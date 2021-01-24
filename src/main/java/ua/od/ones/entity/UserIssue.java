@@ -7,28 +7,30 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import java.util.Date;
 import java.util.List;
 
 @Entity
 @Data
-public class UserIssues {
+@Table(name = "users_issues")
+public class UserIssue {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private int publicationId;
     private Date startDate;
     private Date endDate;
     private int price;
 
-    @OneToMany(mappedBy = "user")
-    @JoinColumn(name = "id")
-    private List<User> users;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User users;
 
-    @OneToMany(mappedBy = "issue")
-    @JoinColumn(name = "id")
-    private List<Issue> issues;
+    @ManyToOne
+    @JoinColumn(name = "issue_id")
+    private Issue issue;
 }
