@@ -30,4 +30,10 @@ public class User {
     @JoinColumn(name = "role_id")
     private Role role;
 
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "local_name_id")
+    private LocalName localName;
+
+
+
 }
