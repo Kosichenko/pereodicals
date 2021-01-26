@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import java.math.BigDecimal;
 
 @Data
 @Entity
@@ -23,7 +24,7 @@ public class Issue {
     private int id;
 
     private String name;
-    private int price;//BigDecimal
+    private BigDecimal price;
 
     @ManyToOne
     @JoinColumn(name = "themes_id")

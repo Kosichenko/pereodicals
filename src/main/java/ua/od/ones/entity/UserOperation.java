@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Data
@@ -28,6 +29,6 @@ public class UserOperation {
 
     private Date date;
     private String description;
-    private int sum;
+    private BigDecimal sum;
 
 }

@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
@@ -27,7 +28,7 @@ public class UserIssue {
 
     @Column(name = "end_date")
     private Date endDate;
-    private int price;
+    private BigDecimal price;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
