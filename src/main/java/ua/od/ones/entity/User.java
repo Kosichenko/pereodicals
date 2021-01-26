@@ -32,7 +32,7 @@ public class User {
 
     @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "local_name_id")
-    private LocalName localName;
+    private Localization localization;
 
 
 

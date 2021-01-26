@@ -11,11 +11,11 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "local_names")
-public class LocalName {
+@Table(name = "localizations")
+public class Localization {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "local_name_id")
+    @Column(name = "localization_id")
     private int id;
 
     private String name;

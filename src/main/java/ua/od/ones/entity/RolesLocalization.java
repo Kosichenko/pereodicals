@@ -26,7 +26,7 @@ public class RolesLocalization {
 
     @ManyToOne
     @JoinColumn(name = "local_names_id")
-    private LocalName localName;
+    private Localization localization;
 
     private String name;
 }

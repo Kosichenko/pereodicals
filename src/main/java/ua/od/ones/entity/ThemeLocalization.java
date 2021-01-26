@@ -10,7 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import java.beans.ConstructorProperties;
 
 @Entity
 @Data
@@ -23,7 +22,7 @@ public class ThemeLocalization {
 
   @ManyToOne
   @JoinColumn(name = "local_names_id")
-  private LocalName localName;
+  private Localization localization;
 
   @ManyToOne
   @JoinColumn(name = "themes_id")
