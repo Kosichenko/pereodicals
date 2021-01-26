@@ -14,12 +14,12 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "user_operations")
+@Table(name = "operations")
 public class UserOperation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_operation_id")
+    @Column(name = "operation_id")
     private int id;
 
     @ManyToOne

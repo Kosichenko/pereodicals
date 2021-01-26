@@ -34,6 +34,4 @@ public class User {
     @JoinColumn(name = "local_name_id")
     private Localization localization;
 
-
-
 }
