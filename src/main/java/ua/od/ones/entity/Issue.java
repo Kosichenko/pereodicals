@@ -19,11 +19,11 @@ public class Issue {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "issue_id")
     private int id;
 
     private String name;
-    private int price;
+    private int price;//BigDecimal
 
     @ManyToOne
     @JoinColumn(name = "themes_id")

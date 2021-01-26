@@ -10,19 +10,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import java.util.List;
 
 @Data
 @Entity
 @Table(name = "users")
 public class User {
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "user_id")
     private int id;
 
     private String name;
@@ -33,13 +29,5 @@ public class User {
     @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "role_id")
     private Role role;
-
-    @OneToMany(mappedBy = "user",
-                cascade = CascadeType.ALL)
-    private List<UserOperation> userOperations;
-
-    @OneToMany(mappedBy = "user",
-            cascade = CascadeType.ALL)
-    private List<UserIssue> userIssues;
 
 }
