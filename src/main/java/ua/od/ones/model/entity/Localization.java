@@ -1,4 +1,4 @@
-package ua.od.ones.entity;
+package ua.od.ones.model.entity;
 
 import lombok.Data;
 
@@ -11,12 +11,13 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "themes")
-public class Theme {
+@Table(name = "localizations")
+public class Localization {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "theme_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "localization_id")
     private int id;
 
+    @Column(unique = true)
     private String name;
 }

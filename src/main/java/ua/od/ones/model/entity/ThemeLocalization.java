@@ -1,4 +1,4 @@
-package ua.od.ones.entity;
+package ua.od.ones.model.entity;
 
 import lombok.Data;
 

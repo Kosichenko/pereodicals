@@ -1,4 +1,4 @@
-package ua.od.ones.mvc.config;
+package ua.od.ones.controller.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;

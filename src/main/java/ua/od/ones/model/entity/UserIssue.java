@@ -1,5 +1,4 @@
-package ua.od.ones.entity;
-
+package ua.od.ones.model.entity;
 
 import lombok.Data;
 
@@ -12,21 +11,30 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import java.math.BigDecimal;
+import java.util.Date;
 
-@Data
 @Entity
-@Table(name = "issues")
-public class Issue {
+@Data
+@Table(name = "users_issues")
+public class UserIssue {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "issue_id")
+    @Column(name = "user_issue_id")
     private int id;
 
-    private String name;
+    @Column(name = "start_date")
+    private Date startDate;
+
+    @Column(name = "end_date")
+    private Date endDate;
     private BigDecimal price;
 
     @ManyToOne
-    @JoinColumn(name = "themes_id")
-    private Theme theme;
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @ManyToOne
+    @JoinColumn(name = "issue_id")
+    private Issue issue;
 }

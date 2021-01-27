@@ -1,4 +1,4 @@
-package ua.od.ones.entity;
+package ua.od.ones.model.entity;
 
 import lombok.Data;
 
@@ -12,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -23,6 +24,7 @@ public class Role  {
     @Column(name = "role_id")
     private int id;
 
+    @Column(unique = true)
     private String name;
 
     @ManyToMany(cascade = CascadeType.MERGE)
@@ -32,4 +34,11 @@ public class Role  {
             inverseJoinColumns = @JoinColumn(name = "user_id")
     )
     private List<User> users;
+
+    public void addUser(User user) {
+        if(users == null) {
+            users = new ArrayList<User>();
+        }
+        users.add(user);
+    }
 }

@@ -1,4 +1,4 @@
-package ua.od.ones.entity;
+package ua.od.ones.model.entity;
 
 import lombok.Data;
 
@@ -10,25 +10,23 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import java.math.BigDecimal;
-import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "operations")
-public class UserOperation {
-
+@Table(name = "roles_localizations")
+public class RolesLocalization {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "operation_id")
+    @Column(name = "role_localization_id")
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    @JoinColumn(name = "role_id")
+    private Role role;
 
-    private Date date;
-    private String description;
-    private BigDecimal sum;
+    @ManyToOne
+    @JoinColumn(name = "local_names_id")
+    private Localization localization;
 
+    private String name;
 }
