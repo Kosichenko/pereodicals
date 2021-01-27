@@ -1,0 +1,61 @@
+package ua.od.ones.model.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import ua.od.ones.model.entity.UserOperation;
+import ua.od.ones.model.repository.UserOperationRepository;
+import ua.od.ones.model.service.UserOperationService;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class UserOperationServiceImpl implements UserOperationService {
+
+    UserOperationRepository repository;
+
+    @Autowired
+    public UserOperationServiceImpl(UserOperationRepository repository) {
+        this.repository = repository;
+    }
+
+    @Override
+    public boolean delete(long id) {
+        if(isExists(id)) {
+            repository.deleteById(id);
+        }
+        return false;
+    }
+
+    @Override
+    public boolean isExists(long id) {
+        return repository.existsById(id);
+    }
+
+    @Override
+    public UserOperation create(UserOperation userOperation) {
+        if(userOperation.getId() == 0) {
+            return repository.saveAndFlush(userOperation);
+        }
+        return userOperation;
+    }
+
+    @Override
+    public boolean update(UserOperation userOperation) {
+        if(userOperation.getId() == 0) {
+            repository.saveAndFlush(userOperation);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public Optional<UserOperation> getById(long id) {
+        return repository.findById(id);
+    }
+
+    @Override
+    public List<UserOperation> getAll() {
+        return repository.findAll();
+    }
+}

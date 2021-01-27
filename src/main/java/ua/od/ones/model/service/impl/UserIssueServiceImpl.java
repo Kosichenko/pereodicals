@@ -2,12 +2,9 @@ package ua.od.ones.model.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ua.od.ones.model.entity.User;
 import ua.od.ones.model.entity.UserIssue;
 import ua.od.ones.model.repository.UserIssueRepository;
-import ua.od.ones.model.repository.UserRepository;
 import ua.od.ones.model.service.UserIssueService;
-import ua.od.ones.model.service.UserService;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,6 +1,5 @@
 package ua.od.ones.model.service;
 
-import ua.od.ones.model.entity.User;
 import ua.od.ones.model.entity.UserIssue;
 
 import java.util.List;
