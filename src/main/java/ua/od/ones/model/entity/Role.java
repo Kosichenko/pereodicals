@@ -18,7 +18,7 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "roles")
-public class Role  {
+public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "role_id")
@@ -37,7 +37,7 @@ public class Role  {
 
     public void addUser(User user) {
         if(users == null) {
-            users = new ArrayList<User>();
+            users = new ArrayList<>();
         }
         users.add(user);
     }

@@ -1,7 +1,6 @@
 package ua.od.ones.model.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import ua.od.ones.model.entity.Role;
 import ua.od.ones.model.entity.Theme;
 
 import java.util.List;
