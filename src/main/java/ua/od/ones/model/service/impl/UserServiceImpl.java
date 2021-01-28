@@ -1,27 +1,46 @@
 package ua.od.ones.model.service.impl;
 
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import ua.od.ones.model.entity.Role;
 import ua.od.ones.model.entity.User;
-import ua.od.ones.model.repository.RoleRepository;
 import ua.od.ones.model.repository.UserRepository;
-import ua.od.ones.model.service.RoleService;
 import ua.od.ones.model.service.UserService;
 
 import java.util.List;
 import java.util.Optional;
 
+@Log4j2
 @Service
 public class UserServiceImpl implements UserService {
 
-    UserRepository repository;
+    private UserRepository repository;
+
+    private PasswordEncoder passwordEncoder;
 
     @Autowired
     public UserServiceImpl(UserRepository repository) {
         this.repository = repository;
     }
 
+    @Autowired
+    public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
+        this.passwordEncoder = passwordEncoder;
+    }
+
+    private void encodePassword(User user) {
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+    }
+
+    public boolean matchPassword(String oldPassword, String encodedPassword) {
+        return passwordEncoder.matches(oldPassword, encodedPassword);
+    }
+
+    public Optional<User> findByEmail(String email) {
+        return repository.findByEmail(email);
+    }
+    
     @Override
     public boolean delete(long id) {
         if(isExists(id)) {

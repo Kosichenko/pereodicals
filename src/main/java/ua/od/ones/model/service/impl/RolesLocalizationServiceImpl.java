@@ -1,5 +1,6 @@
 package ua.od.ones.model.service.impl;
 
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ua.od.ones.model.entity.Role;
@@ -12,10 +13,11 @@ import ua.od.ones.model.service.RolesLocalizationService;
 import java.util.List;
 import java.util.Optional;
 
+@Log4j2
 @Service
 public class RolesLocalizationServiceImpl implements RolesLocalizationService {
 
-    RolesLocalizationRepository repository;
+    private RolesLocalizationRepository repository;
 
     @Autowired
     public RolesLocalizationServiceImpl(RolesLocalizationRepository repository) {
