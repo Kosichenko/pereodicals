@@ -79,4 +79,9 @@ public class UserServiceImpl implements UserService {
     public List<User> getAll() {
         return repository.findAll();
     }
+
+    @Override
+    public Optional<User> getByName(String name) {
+        return repository.findByName(name);
+    }
 }

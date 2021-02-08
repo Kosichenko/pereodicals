@@ -18,4 +18,6 @@ public interface RoleService extends GenericService<Role>{
 
     @Override
     List<Role> getAll();
+
+    Optional<Role> getByRole(String test);
 }

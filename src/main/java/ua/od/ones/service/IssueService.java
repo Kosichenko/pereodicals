@@ -18,4 +18,6 @@ public interface IssueService extends GenericService<Issue>{
 
     @Override
     List<Issue> getAll();
+
+    Optional<Issue> getByIssue(String name);
 }

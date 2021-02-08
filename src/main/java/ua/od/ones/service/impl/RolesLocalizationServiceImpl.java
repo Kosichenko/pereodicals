@@ -3,6 +3,7 @@ package ua.od.ones.service.impl;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ua.od.ones.entity.Role;
 import ua.od.ones.entity.RolesLocalization;
 import ua.od.ones.repository.RolesLocalizationRepository;
 import ua.od.ones.service.RolesLocalizationService;
@@ -59,5 +60,10 @@ public class RolesLocalizationServiceImpl implements RolesLocalizationService {
     @Override
     public List<RolesLocalization> getAll() {
         return repository.findAll();
+    }
+
+    @Override
+    public Role getByRole(String name) {
+        return repository.findByName(name);
     }
 }

@@ -18,4 +18,6 @@ public interface UserService extends GenericService<User>{
 
     @Override
     List<User> getAll();
+
+    Optional<User> getByName(String test);
 }

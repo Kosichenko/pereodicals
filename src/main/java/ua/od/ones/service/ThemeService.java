@@ -16,6 +16,8 @@ public interface ThemeService extends GenericService<Theme> {
     @Override
     Optional<Theme> getById(long id);
 
+    Optional<Theme> getByTheme(String name);
+
     @Override
     List<Theme> getAll();
 }

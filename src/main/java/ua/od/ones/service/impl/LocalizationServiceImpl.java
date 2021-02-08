@@ -57,6 +57,11 @@ public class LocalizationServiceImpl implements LocalizationService {
     }
 
     @Override
+    public Optional<Localization> getByLocalization(String name) {
+        return repository.findByName(name);
+    }
+
+    @Override
     public List<Localization> getAll() {
         return repository.findAll();
     }

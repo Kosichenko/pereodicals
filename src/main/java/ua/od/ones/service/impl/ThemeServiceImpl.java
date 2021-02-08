@@ -57,6 +57,11 @@ public class ThemeServiceImpl implements ThemeService {
     }
 
     @Override
+    public Optional<Theme> getByTheme(String name) {
+        return repository.findByName(name);
+    }
+
+    @Override
     public List<Theme> getAll() {
         return repository.findAll();
     }

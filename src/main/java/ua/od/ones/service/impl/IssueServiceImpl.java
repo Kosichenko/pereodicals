@@ -60,4 +60,9 @@ public class IssueServiceImpl implements IssueService {
     public List<Issue> getAll() {
         return repository.findAll();
     }
+
+    @Override
+    public Optional<Issue> getByIssue(String name) {
+        return repository.findByName(name);
+    }
 }

@@ -16,6 +16,8 @@ public interface LocalizationService extends GenericService<Localization> {
     @Override
     Optional<Localization> getById(long id);
 
+    Optional<Localization> getByLocalization(String name);
+
     @Override
     List<Localization> getAll();
 }

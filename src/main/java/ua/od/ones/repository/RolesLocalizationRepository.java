@@ -2,6 +2,7 @@ package ua.od.ones.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import ua.od.ones.entity.Role;
 import ua.od.ones.entity.RolesLocalization;
 
 import java.util.List;
@@ -12,4 +13,6 @@ public interface RolesLocalizationRepository extends JpaRepository <RolesLocaliz
     Optional<RolesLocalization> findById(Long id);
 
     List<RolesLocalization> findAll();
+
+    Role findByName(String name);
 }
